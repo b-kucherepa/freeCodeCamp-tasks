@@ -1,0 +1,179 @@
+body {
+  background: fixed linear-gradient(#fff, #ddd);
+  color: #222;
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+}
+
+main,
+footer {
+  padding: 0 10%;
+  margin: 2rem auto;
+}
+
+footer {
+  margin: 1rem auto;
+  text-align: center;
+  font-style: italic;
+}
+
+h1 {
+  color: #333;
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-top: 3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 0 1rem;
+}
+
+.nav-link:last-child {
+  color: #a0f;
+}
+
+.nav-link:hover {
+  background-color: #555;
+}
+
+#header {
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  place-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+#header-img {
+  max-width: 3rem;
+  clip-path: circle(49%);
+  margin: 1rem 2rem;
+}
+
+#header-title {
+  color: #a0f;
+  font-size: 3rem;
+  font-style: italic;
+  margin: 0 2rem;
+}
+
+#video {
+  display: block;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+#form {
+  text-align: center;
+}
+
+#email {
+  padding: 0.5rem;
+  margin: 0.75rem auto;
+  width: 200px;
+}
+
+#submit {
+  padding: 0.5rem 2rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #555;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-auto-flow: auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.desc {
+  padding: 1rem;
+  background: linear-gradient(#fff, transparent 80%);
+  border-top: 1rem #a0f solid;
+  border-radius: 1rem;
+}
+
+blockquote,
+fieldset {
+  text-align: center;
+  font-style: italic;
+  color: #a0f;
+  border-width: 2px 0 2px 0;
+  border-style: solid;
+  border-color: #555;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+table {
+  border-width: 2px 0 2px 0;
+  border-style: solid;
+  border-color: #555;
+  border-radius: 0.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+th {
+  color: #a0f;
+  font-size: 1.5rem;
+  height: 3rem;
+}
+
+td {
+  height: 2rem;
+}
+
+tr:nth-child(even)
+{
+  background-color: #ddd;
+}
+
+hr {
+  background: radial-gradient(#a0f, transparent 75%);
+  width: 80%;
+  height: 1rem;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    display: inline;
+  }
+
+  .desc {
+    border-top: none;
+    background: none;
+    padding: 0rem;
+  }
+
+  h2 {
+    color: #a0f;
+  }
+}

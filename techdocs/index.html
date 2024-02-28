@@ -1,0 +1,271 @@
+<!--
+Failed:You should have at least five code elements that are descendants of .main-section elements.
+Failed:You should have at least five li elements that are descendants of .main-section elements.-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.js Technical Documentation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav id="navbar">
+    <header>
+      <h1>Node.js Technical Documentation</h1>
+    </header>
+    <a class="nav-link" href="#introduction">Introduction</a>
+    <a class="nav-link" href="#what_is_node.js">What is Node.js</a>
+    <a class="nav-link" href="#how_to_install_node.js">How to install Node.js</a>
+    <a class="nav-link" href="#differences_between_node.js_and_the_browser">Differences between Node.js and the Browser</a>
+    <a class="nav-link" href="#the_v8_javascript_engine">The V8 JavaScript Engine</a>
+    <a class="nav-link" href="#npm_package_manager">npm package manager</a>
+  </nav>
+
+  <main id="main-doc">
+    <section id="introduction" class="main-section">
+      <header>
+        <h1>Introduction</h1>
+      </header>
+      <h2>What is recommended to learn before diving deep with Node.js?</h2>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar">Lexical
+            Structure</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators">Expressions</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures">Data Types</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">Classes</a></li>
+        <li><a
+            href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables#what_is_a_variable">Variables</a>
+        </li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions">Functions</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this"><code>this</code>
+            operator</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Arrow
+            Functions</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">Loops</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Scope">Scopes</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Arrays</a>
+        </li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">Template
+            Literals</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">Strict Mode</a></li>
+        <li><a href="/en/learn/getting-started/ecmascript-2015-es6-and-beyond">ECMAScript 2015 (ES6) and beyond</a></li>
+      </ul>
+    </section>
+
+    <section id="what_is_node.js" class="main-section">
+      <header>
+        <h1>What is Node.js</h1>
+      </header>
+      <p>As an asynchronous event-driven JavaScript runtime, Node.js is designed to build
+        scalable network applications. In the following &quot;hello world&quot; example, many
+        connections can be handled concurrently. Upon each connection, the callback is
+        fired, but if there is no work to be done, Node.js will sleep.
+      <pre><code>const http = require('node:http');
+      const hostname = '127.0.0.1';
+      const port = 3000;
+      const server = http.createServer((req, res) => {
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'text/plain');
+          res.end('Hello World');
+        });
+        server.listen(port, hostname, () => {
+        console.log(`Server running at http://${hostname}:${port}/`);
+      });</code></pre>
+      </p>
+      <p>This is in contrast to today&#x27;s more common concurrency model, in which OS threads
+        are employed. Thread-based networking is relatively inefficient and very
+        difficult to use. Furthermore, users of Node.js are free from worries of
+        dead-locking the process, since there are no locks. Almost no function in
+        Node.js directly performs I/O, so the process never blocks except when the I/O is performed using
+        synchronous methods of Node.js standard library. Because nothing blocks, scalable systems are very
+        reasonable to develop in Node.js.</p>
+    </section>
+
+    <section id="how_to_install_node.js" class="main-section">
+      <header>
+        <h1>How to install Node.js</h1>
+      </header>
+      <p>Node.js can be installed in different ways. This post highlights the most common and convenient ones. Official
+        packages for all the major platforms are available at <a
+          href="https://nodejs.org/download/">https://nodejs.org/download/</a>.</p>
+      <p>One very convenient way to install Node.js is through a package manager. In this case, every operating system
+        has its own. Other package managers for MacOS, Linux, and Windows are listed in <a
+          href="https://nodejs.org/download/package-manager/">https://nodejs.org/download/package-manager/</a></p>
+      <p>nvm is a popular way to run Node.js. It allows you to easily switch the Node.js version, and install new
+        versions to try and easily rollback if something breaks. It is also very useful to test your code with old
+        Node.js versions..</p>
+      <p>In any case, when Node.js is installed you'll have access to the node executable program in the command line..
+      </p>
+    </section>
+
+    <section id="differences_between_node.js_and_the_browser" class="main-section">
+      <header>
+        <h1>Differences between Node.js and the Browser</h1>
+      </header>
+      <p>Both the browser and Node.js use JavaScript as their programming language. Building apps that run in the
+        browser
+        is a completely different thing than building a Node.js application. Despite the fact that it's always
+        JavaScript,
+        there are some key differences that make the experience radically different.</p>
+      <p>From the perspective of a frontend developer who extensively uses JavaScript, Node.js apps bring with them a
+        huge
+        advantage: the comfort of programming everything - the frontend and the backend - in a single language.</p>
+      <p>You have a huge opportunity because we know how hard it is to fully, deeply learn a programming language, and
+        by
+        using the same language to perform all your work on the web - both on the client and on the server, you're in a
+        unique position of advantage.</p>
+      <p>In the browser, most of the time what you are doing is interacting with the DOM, or other Web Platform APIs
+        like
+        Cookies. Those do not exist in Node.js, of course. You don't have the document, window and all the other objects
+        that are provided by the browser.</p>
+      <p>And in the browser, we don't have all the nice APIs that Node.js provides through its modules, like the
+        filesystem
+        access functionality.</p>
+      <p>Another big difference is that in Node.js you control the environment. Unless you are building an open source
+        application that anyone can deploy anywhere, you know which version of Node.js you will run the application on.
+        Compared to the browser environment, where you don't get the luxury to choose what browser your visitors will
+        use,
+        this is very convenient.</p>
+      <p>This means that you can write all the modern ES2015+ JavaScript that your Node.js version supports. Since
+        JavaScript moves so fast, but browsers can be a bit slow to upgrade, sometimes on the web you are stuck with
+        using
+        older JavaScript / ECMAScript releases. You can use Babel to transform your code to be ES5-compatible before
+        shipping it to the browser, but in Node.js, you won't need that.</p>
+      <p>Another difference is that Node.js supports both the CommonJS and ES module systems (since Node.js v12), while
+        in
+        the browser we are starting to see the ES Modules standard being implemented.
+      <p>In practice, this means that you can use both require() and import in Node.js, while you are limited to import
+        in
+        the browser.</p>
+    </section>
+
+    <section id="the_v8_javascript_engine" class="main-section">
+      <header>
+        <h1>The V8 JavaScript Engine</h1>
+      </header>
+      <h2>What is V8?</h2>
+      <p>V8 is the name of the JavaScript engine that powers Google Chrome. It's the thing that takes our JavaScript and
+        executes it while browsing with Chrome.</p>
+      <p>V8 is the JavaScript engine i.e. it parses and executes JavaScript code. The DOM, and the other Web Platform
+        APIs (they all makeup runtime environment) are provided by the browser.</p>
+      <p>The cool thing is that the JavaScript engine is independent of the browser in which it's hosted. This key
+        feature enabled the rise of Node.js. V8 was chosen to be the engine that powered Node.js back in 2009, and as
+        the popularity of Node.js exploded, V8 became the engine that now powers an incredible amount of server-side
+        code written in JavaScript.</p>
+      <p>The Node.js ecosystem is huge and thanks to V8 which also powers desktop apps, with projects like Electron.</p>
+
+      <h2>Other JS engines</h2>
+      <p>Other browsers have their own JavaScript engine: Firefox has SpiderMonkey, Safari has JavaScriptCore (also
+        called Nitro), Edge was originally based on Chakra but has more recently been rebuilt using Chromium and the V8
+        engine, and many others exist as well.</p>
+      <p>All those engines implement the ECMA ES-262 standard, also called ECMAScript, the standard used by JavaScript.
+      </p>
+
+      <h2>The quest for performance</h2>
+      <p>V8 is written in C++, and it's continuously improved. It is portable and runs on Mac, Windows, Linux and
+        several other systems.</p>
+      <p>In this V8 introduction, we will ignore the implementation details of V8: they can be found on more
+        authoritative sites (e.g. the V8 official site), and they change over time, often radically.</p>
+      <p>V8 is always evolving, just like the other JavaScript engines around, to speed up the Web and the Node.js
+        ecosystem.</p>
+      <p>On the web, there is a race for performance that's been going on for years, and we (as users and developers)
+        benefit a lot from this competition because we get faster and more optimized machines year after year.</p>
+
+      <h2>Compilation</h2>
+      <p>JavaScript is generally considered an interpreted language, but modern JavaScript engines no longer just
+        interpret JavaScript, they compile it.</p>
+      <p>This has been happening since 2009, when the SpiderMonkey JavaScript compiler was added to Firefox 3.5, and
+        everyone followed this idea.</p>
+      <p>JavaScript is internally compiled by V8 with just-in-time (JIT) compilation to speed up the execution.</p>
+      <p>This might seem counter-intuitive, but since the introduction of Google Maps in 2004, JavaScript has evolved
+        from a language that was generally executing a few dozens of lines of code to complete applications with
+        thousands to hundreds of thousands of lines running in the browser.</p>
+      <p>Our applications can now run for hours inside a browser, rather than being just a few form validation rules or
+        simple scripts.</p>
+      <p>In this new world, compiling JavaScript makes perfect sense because while it might take a little bit more to
+        have the JavaScript ready, once done it's going to be much more performant than purely interpreted code.</p>
+    </section>
+
+    <section id="npm_package_manager" class="main-section">
+      <header>
+        <h1>npm package manager</h1>
+      </header>
+      <h2>Introduction to npm</h2>
+      <p>npm is the standard package manager for Node.js.</p>
+      <p>In September 2022 over 2.1 million packages were reported being listed in the npm registry, making it the
+        biggest single language code repository on Earth, and you can be sure there is a package for (almost!)
+        everything.</p>
+      <p>It started as a way to download and manage dependencies of Node.js packages, but it has since become a tool
+        used also in frontend JavaScript.</p>
+      <p>Yarn and pnpm are alternatives to npm cli. You can check them out as well.</p>
+
+      <h2>Packages</h2>
+      <p>npm manages downloads of dependencies of your project.</p>
+
+      <h2>Installing all dependencies</h2>
+      <p>If a project has a package.json file, by running
+      <pre><code>npm install</pre></code></p>
+      <p>it will install everything the project needs, in the node_modules folder, creating it if it's not existing
+        already.</p>
+
+      <h2>Installing a single package</h2>
+      <p>You can also install a specific package by running
+      <pre><code>npm install %package-name%</pre></code></p>
+      <p>Furthermore, since npm 5, this command adds <package-name> to the package.json file dependencies. Before
+          version 5, you needed to add the flag --save.</p>
+
+      <h2>Updating packages</h2>
+      <p>Updating is also made easy, by running
+      <pre><code>npm update</pre></code></p>
+      <p>npm will check all packages for a newer version that satisfies your versioning constraints.</p>
+      <p>You can specify a single package to update as well:
+      <pre><code>npm update %package-name%</pre></code></p>
+
+      <h2>Versioning</h2>
+      <p>In addition to plain downloads, npm also manages versioning, so you can specify any specific version of a
+        package, or require a version higher or lower than what you need.</p>
+      <p>Many times you'll find that a library is only compatible with a major release of another library.</p>
+      <p>Or a bug in the latest release of a lib, still unfixed, is causing an issue.</p>
+      <p>Specifying an explicit version of a library also helps to keep everyone on the same exact version of a package,
+        so that the whole team runs the same version until the package.json file is updated.</p>
+      <p>In all those cases, versioning helps a lot, and npm follows the semantic versioning (semver) standard.</p>
+      <p>You can install a specific version of a package, by running
+      <pre><code>npm install %package-name%@%version%</pre></code></p>
+
+      <h2>Running Tasks</h2>
+      <p>The package.json file supports a format for specifying command line tasks that can be run by using
+      <pre><code>npm run %task-name%</pre></code></p>
+      <p>For example:
+      <pre><code>{
+  "scripts": {
+    "start-dev": "node lib/server-development",
+    "start": "node lib/server-production"
+  }
+}</code></pre>
+      </p>
+
+      <p>It's very common to use this feature to run Webpack:
+      <pre><code>{
+  "scripts": {
+    "watch": "webpack --watch --progress --colors --config webpack.conf.js",
+    "dev": "webpack --progress --colors --config webpack.conf.js",
+    "prod": "NODE_ENV=production webpack -p --config webpack.conf.js"
+  }
+}</code></pre>
+      </p>
+
+      <p>So instead of typing those long commands, which are easy to forget or mistype, you can run
+      <pre><code>$ npm run watch
+$ npm run dev
+$ npm run prod</code></pre>
+      </p>
+    </section>
+
+  </main>
+</body>
+
+</html>

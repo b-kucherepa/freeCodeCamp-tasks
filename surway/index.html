@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+        <h1 id="title">Valinor Community Survey</h1>
+        <p id="description">
+                Only valar, elves and some exceptional persons* are allowed (*see <a
+                        href="https://lotr.fandom.com/wiki/Ring-bearer">Bearers of the One Ring</a>)</p>
+        <form id="survey-form">
+                <fieldset>
+                        <legend>General information (required)</legend>
+                        <label id="name-label" for="name">Name: <input id="name" name="name" type="text" required
+                                        placeholder="Alatariel"> </label>
+                        <label id="email-label" for="email">E-mail: <input id="email" name="email" type="email" required
+                                        placeholder="galadriel@lothlorien.ard"> </label>
+                        <label id="number-label" for="number">Age: <input id="number" name="number" type="number"
+                                        required min="50" max="10000" placeholder="8384"> </label>
+                        <label for="dropdown">Reason of arrival:
+                                <select id="dropdown">
+                                        <option value="">Select the reason</option>
+                                        <option value="1">Was here initially</option>
+                                        <option value="2">Death</option>
+                                        <option value="3">Finishing business in Middle-earth</option>
+                                        <option value="4">Bearer of the One Ring</option>
+                                        <option value="5">Eru Ilúvatar's will</option>
+                                        <option value="6">Other</option>
+                                </select></label>
+                </fieldset>
+                <fieldset>
+                        <legend>Race</legend>
+                        <label for="vala"><input id="vala" type="radio" name="race" value="vala" /> Vala</label>
+                        <label for="elf"><input id="elf" type="radio" name="race" value="elf" checked /> Elf</label>
+                        <label for="hobbit"><input id="hobbit" type="radio" name="race" value="hobbit" /> Hobbit</label>
+                        <label for="dwarf"><input id="dwarf" type="radio" name="race" value="dwarf" /> Dwarf</label>
+                </fieldset>
+                <fieldset>
+                        <legend>Length of Residence in Valinor (total):</legend>
+                        <label for="less-than-100"><input type="radio" id="less-than-100" name="residence-length"
+                                        value="below-100">Less than 100 Years</label>
+                        <label for="100-to-500"><input type="radio" id="100-to-500" name="residence-length"
+                                        value="100-500">100-500 Years</label>
+                        <label for="501-to-1000"><input type="radio" id="501-to-1000" name="residence-length"
+                                        value="501-1000">501-1000 Years</label>
+                        <label for="over-1000"><input type="radio" id="over-1000" name="residence-length"
+                                        value="over-1000" checked>Over 1000 Years</label>
+                </fieldset>
+                <fieldset>
+                        <legend>Occupation:</legend>
+                        <label for="craftsman"><input type="checkbox" id="craftsman" name="occupation"
+                                        value="craftsman">Craftsman/Craftswoman</label>
+                        <label for="scholar"><input type="checkbox" id="scholar" name="occupation"
+                                        value="scholar">Scholar</label>
+                        <label for="artisan"><input type="checkbox" id="artisan" name="occupation"
+                                        value="artisan">Artisan</label>
+                        <label for="warrior"><input type="checkbox" id="warrior" name="occupation"
+                                        value="warrior">Warrior</label>
+                        <label for="gardener"><input type="checkbox" id="gardener" name="occupation"
+                                        value="gardener">Gardener</label>
+                        <label for="administrator"><input type="checkbox" id="administrator" name="occupation"
+                                        value="administrator">Administrator</label>
+                        <label for="healer"><input type="checkbox" id="healer" name="occupation"
+                                        value="healer">Healer</label>
+                        <label for="other-occupation"><input type="checkbox" id="other-occupation" name="occupation"
+                                        value="other">Other (please specify):</label>
+                        <input type="text" id="other-occupation-text" name="other-occupation-text">
+                </fieldset>
+                <fieldset>
+                        <legend>Language Proficiency:</legend>
+                        <label for="quenya"><input type="checkbox" id="quenya" name="language-proficiency"
+                                        value="quenya">Quenya</label>
+                        <label for="sindarin"><input type="checkbox" id="sindarin" name="language-proficiency"
+                                        value="sindarin">Sindarin</label>
+                        <label for="westron"><input type="checkbox" id="westron" name="language-proficiency"
+                                        value="westron">Westron/Common Speech</label>
+                        <label for="other-language"><input type="checkbox" id="other-language"
+                                        name="language-proficiency" value="other">Other (please specify):</label>
+                        <input type="text" id="other-language-text" name="other-language-text">
+                </fieldset>
+                <fieldset>
+                        <legend>Participation in Community Activities:</legend>
+                        <label for="gatherings"><input type="checkbox" id="gatherings" name="community-activities"
+                                        value="gathering">Regularly attend gatherings in the Halls
+                                of Mandos</label>
+                        <label for="cultural-events"><input type="checkbox" id="cultural-events"
+                                        name="community-activities" value="culture">Active in cultural events
+                                (festivals,
+                                concerts, etc.)</label>
+                        <label for="recreational-activities"><input type="checkbox" id="recreational-activities"
+                                        name="community-activities" value="recreation">Engage
+                                in recreational activities (sports, games, etc.)</label>
+                        <label for="educational-seminars"><input type="checkbox" id="educational-seminars"
+                                        name="community-activities" value="education">Participate in
+                                educational seminars or workshops</label>
+                        <label for="volunteer"><input type="checkbox" id="volunteer" name="community-activities"
+                                        value="volunteer">Volunteer for community service
+                                projects</label>
+                        <label for="not-involved"><input type="checkbox" id="not-involved" name="community-activities"
+                                        value="Not-involved">Not actively involved in community
+                                activities</label>
+                </fieldset>
+
+                <fieldset>
+                        <legend>Satisfaction with Community Services and Infrastructure:</legend>
+                        <label for="very-satisfied"><input type="checkbox" id="very-satisfied" name="satisfaction"
+                                        value="5">Very Satisfied</label>
+                        <label for="satisfied"><input type="checkbox" id="satisfied" name="satisfaction"
+                                        value="4">Satisfied</label>
+                        <label for="neutral"><input type="checkbox" id="neutral" name="satisfaction"
+                                        value="3">Neutral</label>
+                        <label for="dissatisfied"><input type="checkbox" id="dissatisfied" name="satisfaction"
+                                        value="2">Dissatisfied</label>
+                        <label for="very-dissatisfied"><input type="checkbox" id="very-dissatisfied" name="satisfaction"
+                                        value="1">Very Dissatisfied</label>
+                </fieldset>
+                <fieldset>
+                        <legend>Additional information:</legend>
+                        <textarea id="more-info" name="more-info" rows="10"
+                                placeholder="Skills and Contributions: Gifted in the arts of diplomacy, wisdom, and the preservation of nature. Possesses the Ring of Adamant, a symbol of commitment to the protection and nurturing of Middle-earth. Previous Accomplishments: Played a pivotal role in the defeat of Sauron, thwarting the darkness that threatened our lands. Led the Elves through times of peril with grace and strength. References: Elrond, Lord of Rivendell; Celeborn, Lord of Lothlórien; Gandalf the Grey."></textarea>
+                </fieldset>
+                <div id="submit-area">
+                        <label for="terms-and-conditions">
+                                <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions"
+                                        value="accept" /> I undertake to provide accurate data.
+                        </label>
+                        <input id="submit" type="submit" value="Submit" />
+                </div>
+        </form>
+</body>
+<footer>
+        <hr>
+        <address></address>(c) Manwe. Valinor, Mount Taniquetil </address>
+</footer>
+
+</html>

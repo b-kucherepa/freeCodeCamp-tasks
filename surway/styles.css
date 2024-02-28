@@ -1,0 +1,100 @@
+/* resets default browser styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, sans-serif;
+}
+
+/* form */
+#survey-form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* header and description */
+h1 {
+  font-size: 3rem;
+  color: blue;
+  margin: 0.5rem auto;
+  text-align: center;
+}
+
+#description {
+  font-size: 0.8rem;
+  margin: 0.5rem auto 2rem auto;
+  text-align: center;
+  font-style: italic;
+}
+
+/* fieldsets and legends */
+fieldset {
+  margin-bottom: 1.5rem;
+  border: 0.1rem solid lightgray;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+}
+
+legend {
+  font-weight: bold;
+  color: dimgrey;
+}
+
+/* labels */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* input fields */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="checkbox"],
+select,
+textarea {
+  padding: 0.25rem;
+  box-sizing: border-box;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* textarea */
+textarea {
+  width: 100%;
+}
+
+/* submit area */
+#submit-area {
+  width: 100%;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+input[type="submit"] {
+  padding: 1rem 4rem;
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: darkslategray;
+}
+
+a {
+  color: teal;
+}
+
+a:hover {
+  color: darkslategray;
+}
+
+/* footer */
+footer {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}

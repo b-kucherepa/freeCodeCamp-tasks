@@ -1,0 +1,92 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  background-color: #111;
+  color: #DDD;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  gap: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #444;
+  color: #0D0;
+  padding: 1rem;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+#navbar::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  color: #0D0;
+  font-size: 2rem;
+  margin-top: 1.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+#navbar header h1 {
+  text-align: left;
+  vertical-align: center;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin:1rem;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+#main-doc {
+  margin-left: 220px; /* Considering 200px for navbar and 20px for spacing */
+  padding: 0.5rem 2rem;
+}
+
+.main-section {
+  margin-bottom: 4rem;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+pre code {
+  display: block;
+  font-size: 1rem;
+  padding: 1rem;
+  text-wrap: wrap;
+  border: #0D0 4px double;
+  border-radius:8px;
+}
+
+@media only screen and (max-width: 768px) {
+  #navbar {
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    width: calc(100% - 1rem);
+    height: fit-content;
+  }
+
+  #main-doc {
+    margin-left: 0;
+  }
+}
