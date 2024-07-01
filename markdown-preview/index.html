@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Markdown Preview</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<head>
+  <link href="themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
+</head>
+
+<body>
+  <main>
+    <div>
+      <label for="editor">Editor:</label>
+      <textarea id="editor" onkeyup="convert()"># Markdown Preview
+## How to use it?
+        
+- Enter your desired Markdown text in the editor field and see the results immediately.
+- Drag the square between the two fields at the bottom of the screen to resize them.
+        
+## What can it render?
+### Code:
+        
+Put your code line, for example `<p></p>`, between 2 backticks.
+
+```
+/*  Or you can put your code between triple backticks
+    ```
+    code
+    ```
+    (yeah, just like that!)*/
+
+function example(separator, code) {
+  if (separator === '```') {
+    const multilinedCode = code.toMultilined();
+    return multilinedCode;
+  }
+}
+```
+        
+### Text:
+
+It can be **bold**,
+it can be *italic*,
+it can be ~~crossed~~
+it can be __underlined__
+(with three underscores ___too___),
+or 
+> blockquoted,
+        
+even 
+> ~~__***all of that simultaneously***__~~
+     
+### Links:   
+        
+Why not visit [my developer's page](https://b-kucherepa.github.io/) to test?
+
+### Tables: 
+        
+Header 1 | Header 2 | Header 3
+------------ | ------------- | -------------
+Data 1 | Some data | ...
+Data 2 | A very very very long data piece here | A long description too
+        
+### Lists:
+
+- Use hyphens to
+- make an unordered list.
+     - Add necessary number of tab indents
+        - to change the level of the point.
+
+
+1. Use "1." at every point 
+1. to make a numbered list
+1. with automatic numeration.
+
+### Embedded images:
+        
+![The Morning Firebird's logo](https://b-kucherepa.github.io/icons/firebird-logo.svg)
+> by Boris Kucherepa / The Morning Firebird (hence the logo!)
+    </textarea>
+    </div>
+    <div>
+      <label for="preview">Preview:</label>
+      <div id="preview"></div>
+      <div />
+  </main>
+</body>
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

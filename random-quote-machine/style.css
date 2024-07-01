@@ -1,0 +1,96 @@
+:root {
+  --main-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-color: black;
+  }
+}
+
+body {
+  font-family: system-ui;
+  background-color: var(--main-color);
+  color: var(--main-color);
+  transition: 1s;
+}
+
+#quote-box {
+  border-radius: 2rem;
+  box-sizing: border-box;
+  box-shadow: 0 0 2rem var(--main-color);
+  margin: 4rem auto;
+  max-width: min(80%, 720px);
+  padding: 2rem 1rem;
+  text-align: center;
+  vertical-align: center;
+}
+
+#text {
+  font-size: 1.5rem;
+}
+
+#text::first-letter {
+  font-size: 5rem;
+  font-family: serif;
+  font-weight: bold;
+  line-height: 0;
+}
+
+#quote-content {
+  line-height: 2;
+  padding: 1rem 0rem;
+  min-height: 30vh;
+  vertical-align: center;
+}
+
+#author::before {
+  content: "— ";
+}
+
+#author {
+  font-size: 1.25rem;
+  font-family: serif;
+  font-style: italic;
+  text-align: right;
+}
+
+#box-bottom {
+  align-items: center;
+  display: flex;
+  font-size: 1rem;
+  justify-content: space-between;
+}
+
+#tweet-quote,
+#new-quote {
+  color: var(--main-color);
+  background-color: transparent;
+  border-color: var(--main-color);
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: 0.1rem;
+  font-size: inherit;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+#copyright {
+  color: var(--main-color);
+  font-style: normal;
+  text-decoration: none;
+  opacity: 0.4;
+}
+
+#tweet-quote:hover,
+#new-quote:hover,
+#copyright:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.fa.fa-twitter::before {
+  content: "𝕏";
+  font-size: 1.25em;
+  font-weight: bold;
+}

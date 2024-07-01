@@ -1,0 +1,92 @@
+:root {
+  --main-color: black;
+  --secondary-color: gray;
+  --back-color: #ffc;
+  --code-color: #ccc;
+  background-color: var(--back-color);
+  color: var(--main-color);
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-color: white;
+    --secondary-color: gray;
+    --back-color: #002;
+    --code-color: #333;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 100%);
+  grid-template-rows: 100%;
+  justify-items: stretch;
+  wrap: word;
+  height: 100vh;
+  width: 100vw;
+}
+
+label {
+  display: block;
+  font-size: 2rem;
+  margin: 0.5rem;
+  text-align: center;
+}
+
+#editor,
+#preview {
+  border: none;
+  color: inherit;
+  background-color: inherit;
+  height: 85%;
+  margin: 0;
+  min-width: 8rem;
+  padding: 1rem;
+  text-wrap: pretty;
+}
+
+#editor {
+  overflow-x: hidden;
+  resize: horizontal;
+}
+
+#preview {
+  overflow-x: scroll;
+}
+
+code {
+  background-color: var(--code-color);
+  border-radius: 1rem;
+  border-style: none;
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  background-color: var(--secondary-color);
+  border-radius: 1rem;
+  border-style: none;
+  height: 1rem;
+  width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 1rem;
+  border-style: none;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: var(--code-color);
+}
+
+.token.operator {
+  background: none !important;
+}
