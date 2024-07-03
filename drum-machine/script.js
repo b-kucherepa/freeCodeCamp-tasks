@@ -75,7 +75,7 @@ function DrumPad(props) {
   const audioElementRef = React.useRef(null);
   const buttonElementRef = React.useRef(null);
 
-  function play() {
+  function handleClick() {
     audioElementRef.current.currentTime = 0;
     audioElementRef.current.play();
     display.setValue(props.name);
@@ -83,7 +83,7 @@ function DrumPad(props) {
 
   function handleMouseDown() {
     buttonElementRef.current.classList.add("drum-pad-clicked");
-    play();
+    buttonElementRef.current.click();
   }
 
   function handleMouseUp() {
@@ -94,7 +94,7 @@ function DrumPad(props) {
     if (event.key.toUpperCase() === props.hotkey) {
       buttonElementRef.current.focus();
       buttonElementRef.current.classList.add("drum-pad-clicked");
-      play();
+      buttonElementRef.current.click();
     }
   }
 
@@ -114,6 +114,7 @@ function DrumPad(props) {
       id: `drum-pad-${props.hotkey}`,
       class: "drum-pad",
       ref: buttonElementRef,
+      onClick: handleClick,
       onMouseDown: handleMouseDown,
       onMouseUp: handleMouseUp },
 
@@ -130,9 +131,7 @@ function DrumPad(props) {
 }
 
 function App() {
-  const [displayState, setDisplayState] = React.useState(
-  "Click a pad / press a key");
-
+  const [displayState, setDisplayState] = React.useState("Press pad / key");
 
   return /*#__PURE__*/(
     React.createElement(DisplayContext.Provider, {

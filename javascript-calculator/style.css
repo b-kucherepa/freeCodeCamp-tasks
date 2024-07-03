@@ -1,0 +1,199 @@
+@import "https://fonts.googleapis.com/css?family=Share+Tech+Mono";
+@font-face {
+  font-family: "Digital";
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7")
+      format("svg");
+}
+
+:root {
+  --machine-background: #ccc;
+  --machine-shadow: #777;
+  --display-color: #fff;
+  --display-background: #00f;
+  --display-shadow: #003;
+  --display-font-family: "digital", "monospace";
+  --pad-color: #000;
+  --pad-background: #fff;
+  --pad-shadow: #000;
+  --pad-font-family: "monospace";
+  --pad-clear-background: #f00;
+  --pad-clear-shadow: #300;
+
+  background-color: #fff;
+  transition: 0.3s;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --machine-background: #666;
+    --machine-shadow: #222;
+    --display-color: #000;
+    --display-background: #fa0;
+    --display-shadow: #310;
+    --pad-color: #fff;
+    --pad-background: #333;
+    --pad-shadow: #000;
+    background-color: #000;
+  }
+}
+
+#app {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+  justify-content: center;
+  width: 100%;
+}
+
+#calc-machine {
+  border-radius: min(5vh, 5vw);
+  box-shadow: inset 0 min(-2vh, -2vw) min(2vh, 2vw) min(1vh, 1vw)
+    var(--machine-shadow);
+  background-color: var(--machine-background);
+  text-align: center;
+  padding: min(5vh, 5vw);
+  padding-bottom: min(8vh, 8vw);
+  width: min-content;
+}
+
+#display {
+  background-color: var(--display-background);
+  box-shadow: inset 0 min(1vh, 1vw) min(2vh, 2vw) min(1vh, 1vw)
+    var(--display-shadow);
+  border-radius: min(3vh, 3vw);
+  color: var(--display-color);
+  font-size: min(8vh, 8vw);
+  font-family: var(--display-font-family);
+  height: min-content;
+  line-height: 0;
+  margin: 0;
+  margin-bottom: min(4vh, 4vw);
+  max-width: 100%;
+  padding: min(8vh, 8vw) min(6vh, 6vw) min(6vh, 6vw) min(6vh, 6vw);
+  text-align: right;
+  text-wrap: nowrap;
+}
+
+#panel {
+  display: grid;
+  gap: min(2vh, 2vw);
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  height: min(68vh, 68vw);
+  width: min(85vh, 85vw);
+}
+
+.panel-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--pad-background);
+  border-radius: min(3vh, 3vw);
+  border-style: none;
+  box-shadow: inset 0 min(-1vh, -1vw) min(1vh, 1vw) 0 var(--pad-shadow);
+  color: var(--pad-color);
+  font-family: var(--pad-font-family);
+  font-size: min(10vh, 10vw);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: 0.3s;
+}
+
+.panel-button-clicked {
+  background-color: var(--pad-background);
+  border-radius: min(3vh, 3vw);
+  border-style: none;
+  box-shadow: inset 0 min(1vh, 1vw) min(1vh, 1vw) 0 var(--pad-shadow);
+  padding-top: min(5vh, 5vw);
+  transition: 0.2s;
+}
+
+.panel-button:focus {
+  outline: none;
+}
+
+#clear {
+  background-color: var(--pad-clear-background);
+  box-shadow: inset 0 min(-1vh, -1vw) min(1vh, 1vw) 0 var(--pad-clear-shadow);
+  grid-area: 1/1/2/2;
+}
+
+#clear.panel-button-clicked {
+  background-color: var(--pad-clear-background);
+  box-shadow: inset 0 min(1vh, 1vw) min(1vh, 1vw) 0 var(--pad-clear-shadow);
+  grid-area: 1/1/2/2;
+}
+
+#divide {
+  grid-area: 1/2/2/3;
+}
+
+#multiply {
+  grid-area: 1/3/2/4;
+}
+
+#subtract {
+  grid-area: 1/4/2/5;
+}
+
+#add {
+  grid-area: 1/5/3/6;
+}
+
+#zero {
+  grid-area: 2/1/4/2;
+}
+
+#decimal {
+  grid-area: 4/1/5/2;
+}
+
+#equals {
+  grid-area: 3/5/5/6;
+}
+
+#one {
+  grid-area: 4/2/5/3;
+}
+
+#two {
+  grid-area: 4/3/5/4;
+}
+
+#three {
+  grid-area: 4/4/5/5;
+}
+
+#four {
+  grid-area: 3/2/4/3;
+}
+
+#five {
+  grid-area: 3/3/4/4;
+}
+
+#six {
+  grid-area: 3/4/4/5;
+}
+
+#seven {
+  grid-area: 2/2/3/3;
+}
+
+#eight {
+  grid-area: 2/3/3/4;
+}
+
+#nine {
+  grid-area: 2/4/3/5;
+}
