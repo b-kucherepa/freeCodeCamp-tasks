@@ -1,0 +1,196 @@
+@import "https://fonts.googleapis.com/css?family=Share+Tech+Mono";
+@font-face {
+  font-family: "Digital";
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7")
+      format("svg");
+}
+
+:root {
+  --machine-background: #ccc;
+  --machine-shadow: #444;
+  --display-color: #fff;
+  --display-background: #00f;
+  --display-shadow: #003;
+  --display-font-family: "digital", "monospace";
+  --button-color: #000;
+  --button-background: #fff;
+  --button-shadow: #000;
+  --button-font-family: "monospace";
+  --button-clear-background: #f00;
+  --button-clear-shadow: #300;
+
+  background-color: #fff;
+  transition: 0.3s;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --machine-background: #666;
+    --machine-shadow: #222;
+    --display-color: #000;
+    --display-background: #fa0;
+    --display-shadow: #310;
+    --button-color: #fff;
+    --button-background: #444;
+    --button-shadow: #000;
+    background-color: #000;
+  }
+}
+
+#app {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+  justify-content: center;
+  width: 100%;
+}
+
+#clock {
+  border-radius: 50%;
+  box-shadow: inset 0 min(-4vh, -4vw) min(2vh, 2vw) min(2vh, 2vw)
+    var(--machine-shadow);
+  background-color: var(--machine-background);
+  height: min(90vh, 90vw);
+  padding: min(5vh, 5vw);
+  padding-top: min(10vh, 10vw);
+  padding-bottom: min(14vh, 14vw);
+  width: min(90vh, 90vw);
+}
+
+#panel {
+  align-items: center;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  height: min(64vh, 64vw);
+  justify-content: center;
+  margin: auto;
+  row-gap: min(2vh, 2vw);
+}
+
+.display-group {
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+}
+
+.button,
+.display {
+  border-style: none;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  transition: 0.3s;
+  vertical-align: middle;
+}
+
+.button {
+  background-color: var(--button-background);
+  box-shadow: inset 0 min(-1vh, -1vw) min(2vh, 2vw) min(1vh, 1vw)
+    var(--button-shadow);
+  color: var(--button-color);
+  font-family: var(--button-font-family);
+  font-size: min(4vh, 4vw);
+  padding: 0;
+  padding-bottom: min(2vh, 2vw);
+  text-wrap: nowrap;
+}
+
+.display {
+  align-items: center;
+  background-color: var(--display-background);
+  box-sizing: border-box;
+  box-shadow: inset 0 min(1vh, 1vw) min(2vh, 2vw) min(1vh, 1vw)
+    var(--display-shadow);
+  color: var(--display-color);
+  display: flex;
+  flex-direction: row;
+  font-family: var(--display-font-family);
+  font-size: min(6vh, 6vw);
+  height: min(12vh, 12vw);
+  justify-content: space-between;
+  line-height: 1;
+  padding: min(2vh, 2vw);
+  padding-top: min(3vh, 3vw);
+  width: min(56vh, 56vw);
+}
+
+#timer-display {
+  display: grid;
+  grid-template-colums: auto;
+  grid-template-rows: 2fr 1fr;
+  height: min(24vh, 24vw);
+  justify-content: center;
+}
+
+#timer-label {
+  width: min(52vh, 52vw);
+}
+
+#session-decrement,
+#break-decrement {
+  border-top-left-radius: min(6vh, 6vw);
+  border-bottom-left-radius: min(6vh, 6vw);
+  height: min(12vh, 12vw);
+  width: min(6vh, 6vw);
+}
+
+#session-increment,
+#break-increment {
+  border-top-right-radius: min(6vh, 6vw);
+  border-bottom-right-radius: min(6vh, 6vw);
+  height: min(12vh, 12vw);
+  width: min(6vh, 6vw);
+}
+
+#start_stop,
+#reset {
+  height: min(24vh, 24vw);
+  width: min(12vh, 12vw);
+}
+
+#start_stop {
+  border-top-left-radius: min(12vh, 12vw);
+  border-bottom-left-radius: min(12vh, 12vw);
+}
+
+#reset {
+  border-top-right-radius: min(12vh, 12vw);
+  border-bottom-right-radius: min(12vh, 12vw);
+}
+
+#session-length,
+#break-length {
+  border: none;
+  color: var(--display-color);
+  font-family: var(--display-font-family);
+  font-size: min(6vh, 6vw);
+  height: min(8vh, 8vw);
+  line-height: 2;
+  width: min(6vh, 6vw);
+  background-color: transparent;
+  text-align: right;
+  overflow: visible;
+}
+
+.button-clicked {
+  background-color: var(--button-background);
+  border-style: none;
+  box-shadow: inset 0 min(1vh, 1vw) min(2vh, 2vw) 0 var(--button-shadow);
+  padding-top: min(5vh, 5vw);
+  transition: 0.2s;
+}
+
+.button:focus {
+  outline: none;
+}
