@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>CodePen - Markdown Preview</title>
-  <link rel="stylesheet" href="./style.css">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Markdown Preview</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <head>
+      <link href="themes/prism.css" rel="stylesheet" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+      />
+    </head>
 
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<head>
-  <link href="themes/prism.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
-</head>
-
-<body>
-  <main>
-    <div>
-      <label for="editor">Editor:</label>
-      <textarea id="editor" onkeyup="convert()"># Markdown Preview
+    <body>
+      <main>
+        <div>
+          <label for="editor">Editor:</label>
+          <textarea id="editor" onkeyup="convert()">
+# Markdown Preview
 ## How to use it?
         
 - Enter your desired Markdown text in the editor field and see the results immediately.
@@ -83,17 +85,17 @@ Data 2 | A very very very long data piece here | A long description too
         
 ![The Morning Firebird's logo](https://b-kucherepa.github.io/icons/firebird-logo.svg)
 > by Boris Kucherepa / The Morning Firebird (hence the logo!)
-    </textarea>
-    </div>
-    <div>
-      <label for="preview">Preview:</label>
-      <div id="preview"></div>
-      <div />
-  </main>
-</body>
-<!-- partial -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js'></script><script  src="./script.js"></script>
-
-</body>
+    </textarea
+          >
+        </div>
+        <div>
+          <label for="preview">Preview:</label>
+          <div id="preview"></div>
+        </div>
+      </main>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
 </html>
