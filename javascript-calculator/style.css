@@ -1,17 +1,17 @@
-@import "https://fonts.googleapis.com/css?family=Share+Tech+Mono";
 @font-face {
-  font-family: "Digital";
-  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
-  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix")
+  font-family: "DS-Digital";
+  src: url("https://db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.eot");
+  src: url("https://db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.eot?#iefix")
       format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2")
+    url("https://db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.woff2")
       format("woff2"),
-    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff")
+    url("https://db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.woff")
       format("woff"),
-    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf")
+    url("https://db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.ttf")
       format("truetype"),
-    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7")
+    url("https://db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.svg#DS-Digital")
       format("svg");
+  size-adjust: 150%;
 }
 
 :root {
@@ -20,11 +20,13 @@
   --display-color: #fff;
   --display-background: #00f;
   --display-shadow: #003;
-  --display-font-family: "digital", "monospace";
+  --display-font-family: "DS-Digital", "monospace";
+  --display-font-size: min(5vh, 5vw);
   --pad-color: #000;
   --pad-background: #fff;
   --pad-shadow: #000;
   --pad-font-family: "monospace";
+  --pad-font-size: min(10vh, 10vw);
   --pad-clear-background: #f00;
   --pad-clear-shadow: #300;
 
@@ -71,14 +73,14 @@
     var(--display-shadow);
   border-radius: min(3vh, 3vw);
   color: var(--display-color);
-  font-size: min(8vh, 8vw);
+  font-size: var(--display-font-size);
   font-family: var(--display-font-family);
   height: min-content;
   line-height: 0;
   margin: 0;
   margin-bottom: min(4vh, 4vw);
   max-width: 100%;
-  padding: min(8vh, 8vw) min(6vh, 6vw) min(6vh, 6vw) min(6vh, 6vw);
+  padding: min(8vh, 8vw) min(5vh, 5vw) min(6vh, 6vw) min(5vh, 5vw);
   text-align: right;
   text-wrap: nowrap;
 }
@@ -103,7 +105,7 @@
   box-shadow: inset 0 min(-1vh, -1vw) min(1vh, 1vw) 0 var(--pad-shadow);
   color: var(--pad-color);
   font-family: var(--pad-font-family);
-  font-size: min(10vh, 10vw);
+  font-size: var(--pad-font-size);
   overflow: hidden;
   text-overflow: ellipsis;
   transition: 0.3s;
